@@ -46,6 +46,8 @@
                                 <releaseStartMessage>Comienza nueva release </releaseStartMessage>
                                 <releaseFinishMessage>Finaliza nueva release</releaseFinishMessage>
                         </commitMessages>
+                        <pushReleases>true</pushReleases>
+                        <noDeploy>true</noDeploy>
                 </configuration>
           </plugin>
     </plugins>

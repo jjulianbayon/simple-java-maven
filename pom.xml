@@ -54,7 +54,7 @@
                         </commitMessages>
                         <pushReleases>true</pushReleases>      <!-- Si se activa permite a Jenkins automatizar los despligues -->
                         <noDeploy>false</noDeploy>              <!--Evita despliegues  desde local para que sea hecho por CI-->
-                        <enableSshAgent>false</enableSshAgent>                   <!--Activa/Desactiva el push para origin usando la ssh key-->
+                        <enableSshAgent>true</enableSshAgent>                   <!--Activa/Desactiva el push para origin usando la ssh key-->
                         <autoVersionSubmodules>false</autoVersionSubmodules>             <!--Mantiene la versión de los submodulos como en el parent del pom-->
 
                    </configuration>

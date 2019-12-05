@@ -4,7 +4,7 @@
   <groupId>com.mycompany.app</groupId>
   <artifactId>my-app</artifactId>
   <packaging>jar</packaging>
-  <version>1.2-SNAPSHOT</version>
+  <version>1.2-flowInitContext-SNAPSHOT</version>
   <name>my-app</name>
   <url>http://maven.apache.org</url>
   <dependencies>
@@ -39,16 +39,25 @@
                   <configuration>
                          <!-- optional configuration -->
                         <gitFlowConfig>
-                          <developmentBranch>develop</developmentBranch>
-                          <productionBranch>master</productionBranch>
-                        </gitFlowConfig>
+                              <productionBranch>master</productionBranch>
+                              <developmentBranch>develop</developmentBranch>
+                              <featureBranchPrefix>feature/</featureBranchPrefix>
+                              <releaseBranchPrefix>release/</releaseBranchPrefix>
+                              <hotfixBranchPrefix>hotfix/</hotfixBranchPrefix>
+                              <supportBranchPrefix>support/</supportBranchPrefix>
+                              <versionTagPrefix>tagPrefijo</versionTagPrefix>
+                              <origin>origin</origin>>
+                          </gitFlowConfig>
                         <commitMessages>
                                 <releaseStartMessage>Comienza nueva release </releaseStartMessage>
                                 <releaseFinishMessage>Finaliza nueva release</releaseFinishMessage>
                         </commitMessages>
-                        <pushReleases>true</pushReleases>
-                        <noDeploy>true</noDeploy>
-                </configuration>
+                        <pushReleases>false</pushReleases>      <!-- Si se activa permite a Jenkins automatizar los despligues -->
+                        <noDeploy>false</noDeploy>              <!--Evita despliegues  desde local para que sea hecho por CI-->
+                        <enableSshAgent>false</enableSshAgent>                   <!--Activa/Desactiva el push para origin usando la ssh key-->
+                        <autoVersionSubmodules>false</autoVersionSubmodules>             <!--Mantiene la versión de los submodulos como en el parent del pom-->
+
+                   </configuration>
           </plugin>
     </plugins>
   </build>

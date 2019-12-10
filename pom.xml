@@ -45,6 +45,7 @@
                               <releaseBranchPrefix>release/</releaseBranchPrefix>
                               <hotfixBranchPrefix>hotfix/</hotfixBranchPrefix>
                               <supportBranchPrefix>support/</supportBranchPrefix>
+                              <squash>true</squash>
                               <!--<versionTagPrefix>tagPrefijo</versionTagPrefix>-->
                               <origin>origin</origin>>
                           </gitFlowConfig>

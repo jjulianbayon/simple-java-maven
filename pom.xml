@@ -49,8 +49,11 @@
                               <origin>origin</origin>>
                           </gitFlowConfig>
                         <commitMessages>
-                                <releaseStartMessage>Comienza nueva release </releaseStartMessage>
-                                <releaseFinishMessage>Finaliza nueva release</releaseFinishMessage>
+                                 <featureStartMessage>Update versions for feature branch</featureStartMessage>
+                                <featureFinishMessage>Update versions for development branch</featureFinishMessage>
+                                <releaseStartMessage>Update versions for release </releaseStartMessage>
+                                <releaseFinishMessage>Update for next development version</releaseFinishMessage>
+                                <releaseVersionUpdateMessage>Update for next development version</releaseVersionUpdateMessage>
                         </commitMessages>
                         <pushReleases>true</pushReleases>      <!-- Si se activa permite a Jenkins automatizar los despligues -->
                         <noDeploy>false</noDeploy>              <!--Evita despliegues  desde local para que sea hecho por CI-->

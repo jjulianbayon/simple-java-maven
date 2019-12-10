@@ -45,7 +45,6 @@
                               <releaseBranchPrefix>release/</releaseBranchPrefix>
                               <hotfixBranchPrefix>hotfix/</hotfixBranchPrefix>
                               <supportBranchPrefix>support/</supportBranchPrefix>
-                              <squash>true</squash>
                               <!--<versionTagPrefix>tagPrefijo</versionTagPrefix>-->
                               <origin>origin</origin>>
                           </gitFlowConfig>
@@ -57,7 +56,7 @@
                         <noDeploy>false</noDeploy>              <!--Evita despliegues  desde local para que sea hecho por CI-->
                         <enableSshAgent>true</enableSshAgent>                   <!--Activa/Desactiva el push para origin usando la ssh key-->
                         <autoVersionSubmodules>false</autoVersionSubmodules>             <!--Mantiene la versión de los submodulos como en el parent del pom-->
-
+                        <squash>true</squash>
                    </configuration>
           </plugin>
     </plugins>

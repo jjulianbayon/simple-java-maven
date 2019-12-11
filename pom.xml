@@ -4,7 +4,7 @@
   <groupId>com.mycompany.app</groupId>
   <artifactId>my-app</artifactId>
   <packaging>jar</packaging>
-  <version>1.9</version>
+  <version>1.10</version>
   <name>my-app</name>
   <url>http://maven.apache.org</url>
   <dependencies>
@@ -50,19 +50,21 @@
                           </gitFlowConfig>
                           <scmCommentPrefix>JgitFLow step: </scmCommentPrefix>
                         <commitMessages>
-                                  <featureStartMessage>Start Update versions for feature branch</featureStartMessage>
-                                  <featureFinishMessage>Finish Update versions for development branch</featureFinishMessage>
+                                  <featureStartMessage>Start Update ${project.artifactId} versions ${version} for feature {featureName} branch</featureStartMessage>
+                                  <featureFinishMessage>Finish Update ${project.artifactId} versions ${version} for development branch</featureFinishMessage>
                                   <hotfixStartMessage>Update versions for hotfix</hotfixStartMessage>
                                   <hotfixFinishMessage>Update for next development version</hotfixFinishMessage>
                                   <hotfixVersionUpdateMessage>Update to hotfix version</hotfixVersionUpdateMessage>
-                                  <releaseStartMessage>Start Update versions for release</releaseStartMessage>
-                                  <releaseFinishMessage>Finish Update for next development version</releaseFinishMessage>
+                                  <releaseStartMessage>Start Update ${project.artifactId} versions ${version} for release</releaseStartMessage>
+                                  <releaseFinishMessage>Finish Update ${project.artifactId} for next ${version} development version</releaseFinishMessage>
                                   <releaseVersionUpdateMessage>Update for next development version</releaseVersionUpdateMessage>
                         </commitMessages>
                         <pushReleases>true</pushReleases>      <!-- Si se activa permite a Jenkins automatizar los despligues -->
                         <noDeploy>false</noDeploy>              <!--Evita despliegues  desde local para que sea hecho por CI-->
                         <enableSshAgent>true</enableSshAgent>                   <!--Activa/Desactiva el push para origin usando la ssh key-->
                         <autoVersionSubmodules>false</autoVersionSubmodules>             <!--Mantiene la versión de los submodulos como en el parent del pom-->
+                        <pullDevelop>true</pullDevelop>
+                        <pullMaster>false</pullMaster>
                         <squash>true</squash>
                    </configuration>
           </plugin>

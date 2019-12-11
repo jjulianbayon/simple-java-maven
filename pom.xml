@@ -64,7 +64,7 @@
                         <enableSshAgent>true</enableSshAgent>                   <!--Activa/Desactiva el push para origin usando la ssh key-->
                         <autoVersionSubmodules>false</autoVersionSubmodules>             <!--Mantiene la versión de los submodulos como en el parent del pom-->
                         <pullDevelop>true</pullDevelop>
-                        <pullMaster>false</pullMaster>
+                        <pullMaster>true</pullMaster>
                         <squash>true</squash>
                    </configuration>
           </plugin>

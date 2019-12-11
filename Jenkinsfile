@@ -14,7 +14,7 @@ pipeline {
         }
         stage ('Build Release'){
             steps{
-                sh 'mvn gitflow:release'
+                sh 'mvn -X gitflow:release'
             }
         }
         /*stage('Build') {

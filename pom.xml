@@ -41,22 +41,22 @@
                         <gitFlowConfig>
                               <productionBranch>master</productionBranch>
                               <developmentBranch>develop</developmentBranch>
-                              <featureBranchPrefix>feature/</featureBranchPrefix>
-                              <releaseBranchPrefix>release/</releaseBranchPrefix>
-                              <hotfixBranchPrefix>hotfix/</hotfixBranchPrefix>
+                              <featureBranchPrefix>ST-</featureBranchPrefix>
+                              <releaseBranchPrefix>release-</releaseBranchPrefix>
+                              <hotfixBranchPrefix>hotfix-</hotfixBranchPrefix>
                               <supportBranchPrefix>support/</supportBranchPrefix>
-                              <!--<versionTagPrefix>tagPrefijo</versionTagPrefix>-->
+                              <versionTagPrefix>MiApp</versionTagPrefix>
                               <origin>origin</origin>>
                           </gitFlowConfig>
-                          <scmCommentPrefix>JgitFLow step: </scmCommentPrefix>
+                          <scmCommentPrefix>GitFLow step: </scmCommentPrefix>
                         <commitMessages>
-                                  <featureStartMessage>Start Update ${project.artifactId} versions ${version} for feature {featureName} branch</featureStartMessage>
-                                  <featureFinishMessage>Finish Update ${project.artifactId} versions ${version} for development branch</featureFinishMessage>
+                                  <featureStartMessage>Start Update ${project.artifactId} versions ${project.version} for feature ${featureName} branch</featureStartMessage>
+                                  <featureFinishMessage>Finish Update ${project.artifactId} versions ${project.version} for development branch</featureFinishMessage>
                                   <hotfixStartMessage>Update versions for hotfix</hotfixStartMessage>
                                   <hotfixFinishMessage>Update for next development version</hotfixFinishMessage>
                                   <hotfixVersionUpdateMessage>Update to hotfix version</hotfixVersionUpdateMessage>
-                                  <releaseStartMessage>Start Update ${project.artifactId} versions ${version} for release</releaseStartMessage>
-                                  <releaseFinishMessage>Finish Update ${project.artifactId} for next ${version} development version</releaseFinishMessage>
+                                  <releaseStartMessage>Start Update ${project.artifactId} versions ${project.version} for release</releaseStartMessage>
+                                  <releaseFinishMessage>Finish Update ${project.artifactId} for next ${project.version} development version</releaseFinishMessage>
                                   <releaseVersionUpdateMessage>Update for next development version</releaseVersionUpdateMessage>
                         </commitMessages>
                         <pushReleases>true</pushReleases>      <!-- Si se activa permite a Jenkins automatizar los despligues -->

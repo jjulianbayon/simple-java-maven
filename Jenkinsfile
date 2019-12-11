@@ -12,11 +12,16 @@ pipeline {
             }
             
         }
-        stage('Build') {
+        stage ('Build Release'){
+            steps{
+                sh 'mvn -X gitflow:release'
+            }
+        }
+        /*stage('Build') {
             steps {
                 sh 'mvn -B -DskipTests clean package'
             }
-        }
+        }*/
         stage('Testeo') {
             steps {
                 sh 'mvn test'

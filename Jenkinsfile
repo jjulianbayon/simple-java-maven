@@ -5,13 +5,14 @@ pipeline {
             args '-v /root/.m2:/root/.m2'
         }
     }
-    stages {
-        stage('Checkout scm') {
-            steps{
-                checkout scm
-            }
-            
-        }
+    stage('Checkout') {
+   checkout([
+           $class           : 'GitSCM',
+           branches         : scm.branches,
+           extensions       : scm.extensions + [[$class: 'LocalBranch', localBranch: '']],
+           userRemoteConfigs: scm.userRemoteConfigs
+   ])
+}
         stage ('Build Release'){
             steps{
                 sh 'mvn -X gitflow:release'

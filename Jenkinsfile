@@ -6,12 +6,17 @@ pipeline {
         }
     }
     stage('Checkout') {
-   checkout([
+        steps{
+            checkout([
            $class           : 'GitSCM',
            branches         : scm.branches,
            extensions       : scm.extensions + [[$class: 'LocalBranch', localBranch: '']],
            userRemoteConfigs: scm.userRemoteConfigs
    ])
+
+
+        }
+
 }
         stage ('Build Release'){
             steps{

@@ -4,10 +4,8 @@ pipeline {
             image 'maven:3-alpine'
             args '-v /root/.m2:/root/.m2'
         }
-    tools {
-        maven 'Maven 3.3.9'
-        jdk 'jdk8'
     }
+    
     stages {
        
         stage ('Build') {
@@ -36,5 +34,4 @@ pipeline {
             }
         }
     }
-  }
 }

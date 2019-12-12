@@ -5,18 +5,6 @@ pipeline {
             args '-v /root/.m2:/root/.m2'
         }
     }
-        stage('Checkout') {
-             steps{
-                    checkout([
-                            $class           : 'GitSCM',
-                            branches         : scm.branches,
-                            extensions       : scm.extensions + [[$class: 'LocalBranch', localBranch: '']],
-                            userRemoteConfigs: scm.userRemoteConfigs
-                            ])
-                }
-
-        }
-
         stage('Build') {
             steps {
                 sh 'mvn -B -DskipTests clean package'
